@@ -6,8 +6,8 @@
 #define CH06PTARRAY_TWODARRAY_H
 
 
-int* expand(int* ar, int size);
-void print(int *ar, int size);
+void set_row(double *the_array , int row_num, int col_size, double *row_vals); // Stores the array of row_ vals in row
+double* get_row(double *the_array, int row_num, int col_size); // Returns the specified row of a two dimensional array
 
 
 
