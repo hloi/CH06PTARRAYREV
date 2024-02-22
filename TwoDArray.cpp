@@ -7,23 +7,12 @@
 
 using namespace std;
 
-int* expand(int* ar, int size) {
-    int newSize = size*2;  // double the size
-    int* arr = new int[newSize]; // use square parenthesis
-    for (int i=0; i<size; i++) {
-        *(arr+i) = *(ar+i);
-    }
-    for (int i=size; i<newSize; i++) {
-        *(arr+i) = 0;
-    }
-    delete ar;  // delete old array
-    return arr; // return new array
-
+void set_row(double *the_array, int row, int col, double row_vals[]) {
+  for (int i = 0; i < col; i++)      
+      *(the_array + row * col + i) = *(row_vals+i);
 }
 
-
-void print(int *ar, int size) {
-    for (int i=0; i<size; i++) {
-        cout << *(ar + i) << endl;
-    }
+/** Return the specified row */
+double* get_row(double *the_array, int row, int col) {
+  return (the_array + row * col);
 }
